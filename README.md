@@ -38,6 +38,23 @@ Stirng joinWords(String[] words) {
 ---
 
 > 1. 중복이 없는가: 문자열이 주어졌을 때, 이 문자열에 같은 문자가 중복되어 등장하는지 확인하는 알고리즘을 작성하라. 자료구조를 추가로 사용하지 않고 풀 수 있는 알고리즘 또한 고민하라.
+```java
+public class Test {
+    public static void main(String[] args) {
+        String sentence = "abcdefg";
+        ArrayList sentenceList = new ArrayList();
+        for(int i = 0; i < sentence.length(); i++) {
+            for(int j = 0; j < sentenceList.size(); j++) {
+                if(sentenceList.get(j).equals(sentence.charAt(i))) {
+                    System.out.println("중복 발생");
+                    break;
+                }
+            }
+            sentenceList.add(sentence.charAt(i));
+        }
+    }
+}
+```
 
 > 2. 순열 확인: 문자열 두 개가 주어졌을 때 이 둘이 서로 순열 관계에 있는지 확인하는 메서드를 작성하라.
 
