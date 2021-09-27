@@ -56,6 +56,30 @@ public class Test {
 }
 ```
 
+책의 해설
+```java
+package com.example.demo.config;
+
+public class Test {
+    public static void main(String[] args) {
+        isUniqueChars("test");
+    }
+    
+    public static boolean isUniqueChars(String str) {
+        if(str.length() > 128) return false;
+        boolean[] char_set = new boolean[128];
+        for(int i = 0; i < str.length(); i++) {
+            int val = str.charAt(i);
+            if(char_set[val]) {
+                return false;
+            }
+            char_set[val] = true;
+        }
+        return true;
+    }
+}
+```
+
 > 2. 순열 확인: 문자열 두 개가 주어졌을 때 이 둘이 서로 순열 관계에 있는지 확인하는 메서드를 작성하라.
 
 > 3. URL화: 문자열에 들어 있는 모든 공백을 '%20'으로 바꿔 주는 메서드를 작성하라. 최종적으로 모든 문자를 다 담을 수 있을 만큼 충분한 공간이 이미 확보되어 있으며 문자열의 최종 길이가 함께 주어진다고 가정해도 된다(자바로 구현한다면 배열 안에서 작업할 수 있도록 문자 배열을 이용하길 바란다).
